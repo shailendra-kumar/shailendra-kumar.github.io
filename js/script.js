@@ -97,7 +97,7 @@ form.addEventListener('submit', (event) => {
   const email = document.querySelector('#email').value;
   const message = document.querySelector('#message').value;
 
-  const mailto = `mailto:youremail@example.com?subject=New Contact Form Submission&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
+  const mailto = `mailto:xpsshaily@gmail.com?subject=New Contact Form Submission&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
   window.location.href = mailto;
 });
 
