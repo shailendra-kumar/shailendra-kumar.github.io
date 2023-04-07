@@ -111,7 +111,7 @@ twitterLink.addEventListener('click', () => {
   window.open('https://twitter.com/your_twitter_handle');
 });
 
-const facebookLink = document.getElementById('facebook-link');
+const facebookLink = document.getElementById('fb-link');
 facebookLink.addEventListener('click', () => {
   window.open('https://www.facebook.com/your_facebook_page');
 });
