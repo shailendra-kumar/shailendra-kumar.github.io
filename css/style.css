@@ -606,6 +606,15 @@ hr {
     cursor: pointer;
 }
 
+.whatsApp-img{
+    width: 20%;
+    padding: 10px 0;
+    cursor: pointer;
+}
+._afvz {
+    width: 100px;
+}
+
 .achievement-content{
     width: 80%;
     margin: auto;

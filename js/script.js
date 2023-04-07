@@ -115,3 +115,31 @@ const facebookLink = document.getElementById('fb-link');
 facebookLink.addEventListener('click', () => {
   window.open('https://www.facebook.com/your_facebook_page');
 });
+
+const qrcode = require('qrcode-terminal');
+const { Client, LocalAuth } = require('whatsapp-web.js');
+const client = new Client({
+  authStrategy:new LocalAuth()
+});
+
+client.on('qr', (qr) => {
+    console.log('QR RECEIVED', qr);
+});
+
+client.on('ready', () => {
+    console.log('Client is ready!');
+});
+
+client.initialize();
+
+
+  window.addEventListener("load", function() {
+    var chatButton = document.querySelector('a[href="https://wa.me/9021642885"]');
+    chatButton.addEventListener("click", function(event) {
+      event.preventDefault();
+      window.open("https://api.whatsapp.com/send?phone=9021642885", "_blank");
+    });
+  });
+
+
+ 
