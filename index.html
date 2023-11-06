@@ -401,6 +401,23 @@
         </div>
     </section>
 
+    <section id="contact" class=" ">
+    <div class="contact-form">
+        <h1 class="sm">We Would Like To Hear From You</h1>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</section>
     <!-- Form Content -->
     <!-- <section id="contact" class=" ">
         <div class="contact-form">
@@ -514,7 +531,44 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUOJHBJMySAUOxVbLGpA9_u-8ht8_pcRk&callback=initMap"
     async defer></script>
 
-    <script src="js/script.js"></script>
+    <script src="js/script.js">
+      
+    function submitForm() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var message = document.getElementById("message").value;
+
+        var data = {
+            name: name,
+            email: email,
+            message: message
+        };
+
+        // Use Fetch API to send data to server-side script
+        fetch("process_query.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.text())
+        .then(responseText => {
+            alert(responseText);
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    }
+    
+    // Add event listener to the form
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        submitForm();
+    });
+
+
+    </script>
 </body>
 </html>
 
