@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = $_POST["query"];
 
     // Replace with your email address
-    $to = "xpsshaily@gmail.com";
+    $to = "advnitishkumar2533@gmail.com";
     $subject = "New Query from $name";
     $messageBody = "Name: $name\nEmail: $email\n\nQuery:\n$query";
 
