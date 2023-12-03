@@ -641,10 +641,17 @@ hr {
     margin: auto;
 }
 
-.achievement-img img{
-    width: 70%;
+.achievement-img img {
     border-radius: 20px;
 }
+
+img.responsive-image {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 
 /* section contact */
 #contact {
