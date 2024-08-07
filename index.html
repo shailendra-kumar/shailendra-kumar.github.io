@@ -387,7 +387,7 @@
                
             
 
-            <form action="process_query.php" method="post">
+             <form id="contact-form">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
               
@@ -399,6 +399,27 @@
               
                 <input type="submit" value="Submit">
               </form>
+            <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("advnitishkumar2533@gmail.com"); // Replace with your EmailJS user ID
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Generate a five digit number for the contact number
+            this.contact_number.value = Math.random() * 100000 | 0;
+
+            // These IDs from the previous steps
+            emailjs.sendForm('service_pkjhdh1', 'YOUR_TEMPLATE_ID', this)
+                .then(function() {
+                    alert('SUCCESS!');
+                }, function(error) {
+                    alert('FAILED...', error);
+                });
+        });
+    </script>
       </div>
       </section>
 
